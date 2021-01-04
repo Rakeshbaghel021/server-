@@ -15,8 +15,8 @@ router.post("/createstudent", requireSignin, (req, res) => {
   }
   req.admin.password = undefined;
   const student = new Student({
-    names,
-    emails,
+    name,
+    email,
     age,
     semester,
     postedBy: req.admin,
