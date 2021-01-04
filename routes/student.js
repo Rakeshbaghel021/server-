@@ -40,50 +40,50 @@ router.get("/allstudent", requireSignin, (req, res, next) => {
   });
 });
 
-// // get single student
+// get single student
 
-// router.get("/:id", requireSignin, (req, res, next) => {
-//   Student.findById(req.params.id, (err, SingleStudent) => {
-//     if (err) return next(err);
-//     res.json({ SingleStudent });
-//   });
-// });
+router.get("/:id", requireSignin, (req, res, next) => {
+  Student.findById(req.params.id, (err, SingleStudent) => {
+    if (err) return next(err);
+    res.json({ SingleStudent });
+  });
+});
 
-// // update student
+// update student
 
-// router.put("/:id", requireSignin, (req, res, next) => {
-//   Student.findByIdAndUpdate(
-//     req.params.id,
-//     req.body,
-//     { new: true },
-//     (err, UpdateStudent) => {
-//       if (err) return next(err);
-//       res.json({ UpdateStudent });
-//     }
-//   );
-// });
+router.put("/:id", requireSignin, (req, res, next) => {
+  Student.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, UpdateStudent) => {
+      if (err) return next(err);
+      res.json({ UpdateStudent });
+    }
+  );
+});
 
-// // update a part of student
+// update a part of student
 
-// router.patch("/:id", requireSignin, (req, res, next) => {
-//   Student.findByIdAndUpdate(
-//     req.params.id,
-//     req.body,
-//     { new: true },
-//     (err, updatedStudent) => {
-//       if (err) return next(err);
-//       res.json({ updatedStudent });
-//     }
-//   );
-// });
+router.patch("/:id", requireSignin, (req, res, next) => {
+  Student.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updatedStudent) => {
+      if (err) return next(err);
+      res.json({ updatedStudent });
+    }
+  );
+});
 
-// // delete student
+// delete student
 
-// router.delete("/:id", requireSignin, (req, res, next) => {
-//   Student.findByIdAndDelete(req.params.id, (err, deletedStudent) => {
-//     if (err) return next(err);
-//     res.json({ deletedStudent });
-//   });
-// });
+router.delete("/:id", requireSignin, (req, res, next) => {
+  Student.findByIdAndDelete(req.params.id, (err, deletedStudent) => {
+    if (err) return next(err);
+    res.json({ deletedStudent });
+  });
+});
 
 module.exports = router;
